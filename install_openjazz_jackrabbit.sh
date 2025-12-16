@@ -103,8 +103,8 @@ print_status "OpenJazz instalado em $OPENJAZZ_DIR"
 # Baixar ícone
 print_info "Baixando ícone..."
 cd "$OPENJAZZ_DIR"
-wget -O jazz_jackrabbit_icon.png "https://raw.githubusercontent.com/AlisterT/openjazz/master/icons/openjazz.png" 2>/dev/null || \
-wget -O jazz_jackrabbit_icon.png "https://www.jazz2online.com/images/jazz1icon.png" 2>/dev/null || \
+wget -O jazz_jackrabbit_icon.png "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/32cae943-6dc3-44a9-b1d5-ccd1e02e06de/dfkxdfb-46515cc3-d892-4ce7-a0b8-d677ac04f4e3.png/v1/fit/w_536,h_513/jazz_jackrabbit_by_r3djok3r1_dfkxdfb-375w-2x.png" 2>/dev/null || \
+wget -O jazz_jackrabbit_icon.png "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/4d04d46d-481e-452a-9bfd-75a8c1cc65a3/dffto58-558eec5c-d7bb-4395-ae62-990dfcbe78f9.png/v1/fit/w_512,h_512/jazz_jackrabbit_2_folder_icon_by_ans0sama_dffto58-375w-2x.png" 2>/dev/null || \
 print_error "Não foi possível baixar o ícone. Você pode adicionar manualmente depois."
 
 if [ -f "jazz_jackrabbit_icon.png" ]; then
