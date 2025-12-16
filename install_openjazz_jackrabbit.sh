@@ -194,7 +194,7 @@ Icon=$HOME/Games/openjazz/jazz_jackrabbit_icon.png
 Exec=$HOME/Games/openjazz/run_jazz.sh
 Path=$HOME/Games/openjazz
 Terminal=false
-Categories=Games;ActionGame;
+Categories=Game;ActionGame;
 Keywords=game;sidescrolling;jazz;
 EOF
 
@@ -212,7 +212,7 @@ Icon=$HOME/Games/openjazz/jazz_jackrabbit_icon.png
 Exec=$HOME/Games/openjazz/run_jazz_hh95.sh
 Path=$HOME/Games/openjazz
 Terminal=false
-Categories=Games;ActionGame;
+Categories=Game;ActionGame;
 Keywords=game;sidescrolling;jazz;christmas;
 EOF
 
