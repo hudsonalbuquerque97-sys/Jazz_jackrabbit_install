@@ -66,45 +66,12 @@ Os arquivos serão automaticamente instalados nos diretórios corretos:
 
 ---
 
-### **Opção 2: Criar pacotes DEB com game-data-packager**
-
-Se você tem os arquivos originais do jogo (`.exe`, CD-ROM, ou arquivos extraídos), pode criar pacotes DEB:
-
-#### 1. Instalar o game-data-packager:
-```bash
-sudo apt install game-data-packager
-```
-
-#### 2. Criar o pacote DEB:
-
-**Para Jazz Jackrabbit:**
-```bash
-game-data-packager jazz-jackrabbit --package jazzjackrabbit.exe
-```
-
-**Para Jazz Jackrabbit Holiday Hare 95:**
-```bash
-game-data-packager jazz-jackrabbit-hh95 --package hh95.exe
-```
-
-Ou, se você tem os arquivos já extraídos em uma pasta:
-```bash
-game-data-packager jazz-jackrabbit -d /caminho/para/pasta/do/jogo
-```
-
-#### 3. Instalar os pacotes criados:
-```bash
-sudo dpkg -i jazz-jackrabbit-data_*.deb
-sudo dpkg -i jazz-jackrabbit-hh95-data_*.deb
-```
-
----
-
-### **Opção 3: Copiar manualmente os arquivos**
+### **Opção 2: Copiar manualmente os arquivos**
 
 Se você já tem os arquivos do jogo, pode copiá-los manualmente:
 
 #### 1. Criar os diretórios:
+
 ```bash
 sudo mkdir -p /usr/share/games/jazz-jackrabbit
 sudo mkdir -p /usr/share/games/jazz-jackrabbit-hh95
@@ -131,18 +98,18 @@ sudo chmod -R 755 /usr/share/games/jazz-jackrabbit-hh95
 
 ### 1. Baixe o script:
 ```bash
-wget https://seu-link/install_openjazz.sh
+wget https://github.com/hudsonalbuquerque97-sys/Jazz_jackrabbit_install/blob/main/install_openjazz_jackrabbit.sh
 # ou copie o conteúdo do script para um arquivo
 ```
 
 ### 2. Dê permissão de execução:
 ```bash
-chmod +x install_openjazz.sh
+chmod +x install_openjazz_jackrabbit.sh
 ```
 
 ### 3. Execute o instalador:
 ```bash
-./install_openjazz.sh
+./install_openjazz_jackrabbit.sh
 ```
 
 ### 4. Aguarde a instalação completar
