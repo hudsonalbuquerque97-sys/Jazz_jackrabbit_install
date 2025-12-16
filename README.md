@@ -98,7 +98,7 @@ sudo chmod -R 755 /usr/share/games/jazz-jackrabbit-hh95
 
 ### 1. Baixe o script:
 ```bash
-wget https://github.com/hudsonalbuquerque97-sys/Jazz_jackrabbit_install/blob/main/install_openjazz_jackrabbit.sh
+wget https://raw.githubusercontent.com/hudsonalbuquerque97-sys/Jazz_jackrabbit_install/refs/heads/main/install_openjazz_jackrabbit.sh
 # ou copie o conteúdo do script para um arquivo
 ```
 
