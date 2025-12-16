@@ -154,7 +154,7 @@ OPENJAZZ_DIR="$HOME/Games/openjazz"
 HH95_DATA="/usr/share/games/jazz-jackrabbit-hh95"
 
 # Verificar se os dados do jogo existem
-if [ ! -d "$HH95_DATA" ] || [ ! -f "$HH95_DATA/LEVEL0.000" ]; then
+if [ ! -d "$HH95_DATA" ] || [ ! -f "$HH95_DATA/LEVEL0.050" ]; then
     if command -v zenity &> /dev/null; then
         zenity --error --width=400 --title="Jazz Jackrabbit HH95 - Erro" \
         --text="<b>Arquivos do jogo não encontrados!</b>\n\nOs arquivos do Holiday Hare 95 devem estar em:\n<tt>$HH95_DATA</tt>\n\nInstale o pacote jazz-jackrabbit-hh95-data ou copie os arquivos manualmente." 2>/dev/null
