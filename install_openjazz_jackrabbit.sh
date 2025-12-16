@@ -1,7 +1,8 @@
 #!/bin/bash
 
-# Script de instalação do OpenJazz
-# criado por Hudson Albuquerque
+# Script de instalação do OpenJazz (sem download de dados do jogo)
+# Autor: Assistente Claude
+# Data: 2025
 
 set -e
 
@@ -31,7 +32,6 @@ print_info() {
 
 # Verificar dependências
 print_info "Verificando dependências..."
-DEPENDENCIES="git build-essential libsdl2-dev libmodplug-dev libvorbis-dev"
 MISSING_DEPS=""
 
 # Verificar ferramentas básicas
@@ -42,8 +42,20 @@ for dep in git make g++; do
     fi
 done
 
-# Verificar bibliotecas
-for lib in libsdl2-dev libmodplug-dev libvorbis-dev; do
+# Verificar bibliotecas SDL (tenta SDL2 primeiro, depois SDL1.2)
+SDL_INSTALLED=false
+if dpkg -l | grep -q "^ii.*libsdl2-dev"; then
+    SDL_INSTALLED=true
+    print_status "SDL2 detectado"
+elif dpkg -l | grep -q "^ii.*libsdl1.2-dev"; then
+    SDL_INSTALLED=true
+    print_status "SDL1.2 detectado"
+else
+    MISSING_DEPS="$MISSING_DEPS libsdl1.2-dev"
+fi
+
+# Verificar outras bibliotecas
+for lib in libmodplug-dev libvorbis-dev; do
     if ! dpkg -l | grep -q "^ii.*$lib"; then
         MISSING_DEPS="$MISSING_DEPS $lib"
     fi
@@ -53,7 +65,7 @@ if [ ! -z "$MISSING_DEPS" ]; then
     print_error "Dependências faltando:$MISSING_DEPS"
     print_info "Instalando dependências..."
     sudo apt-get update
-    sudo apt-get install -y build-essential libsdl2-dev libmodplug-dev libvorbis-dev
+    sudo apt-get install -y build-essential libsdl1.2-dev libmodplug-dev libvorbis-dev
 fi
 
 print_status "Dependências verificadas"
@@ -219,15 +231,10 @@ echo "=================================="
 echo ""
 print_info "IMPORTANTE: Você precisa instalar os dados do jogo:"
 echo ""
-echo "Opção 1 - Usar pacotes DEB:"
-echo "  sudo apt install jazz-jackrabbit-data jazz-jackrabbit-hh95-data"
+echo "Opção 1 - Se voçê possui os pacotes DEB do game data package do jogo:"
+echo "  sudo apt install jazz-jackrabbit-data_65_all.deb jazz-jackrabbit-hh95-data_65_all.deb"
 echo ""
-echo "Opção 2 - Baixar do Archive.org:"
-echo "  wget https://archive.org/download/game-data-debian-packages/jazz-jackrabbit-data_65_all.deb"
-echo "  wget https://archive.org/download/game-data-debian-packages/jazz-jackrabbit-hh95-data_65_all.deb"
-echo "  sudo dpkg -i jazz-jackrabbit-data_65_all.deb jazz-jackrabbit-hh95-data_65_all.deb"
-echo ""
-echo "Opção 3 - Copiar manualmente:"
+echo "Opção 2 - Se voce possuir os arquivos do jogo copier manualmente:"
 echo "  sudo mkdir -p /usr/share/games/jazz-jackrabbit"
 echo "  sudo mkdir -p /usr/share/games/jazz-jackrabbit-hh95"
 echo "  sudo cp -r /caminho/dos/arquivos/* /usr/share/games/jazz-jackrabbit/"
