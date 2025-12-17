@@ -65,8 +65,25 @@ Os arquivos serão automaticamente instalados nos diretórios corretos:
 - `/usr/share/games/jazz-jackrabbit-hh95/`
 
 ---
+### **Opção 2: Criar pacotes DEB com game-data-packager**
 
-### **Opção 2: Copiar manualmente os arquivos**
+Se você tem os arquivos originais do jogo (CD-ROM, ou arquivos extraídos), pode criar pacotes DEB:
+
+#### 1. Instalar o game-data-packager:
+```bash
+sudo apt install game-data-packager
+```
+
+#### 2. Criar o pacote DEB:
+
+se você tem os arquivos já extraídos em uma pasta:
+
+```bash
+game-data-packager jazz-jackrabbit -n /caminho/para/pasta/do/jogo
+```
+---
+
+### **Opção 3: Copiar manualmente os arquivos**
 
 Se você já tem os arquivos do jogo, pode copiá-los manualmente:
 
